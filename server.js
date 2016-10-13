@@ -4,8 +4,8 @@ var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
-
-var articleOne = {
+var articles = {
+     'article-one' : {
     title: 'Article One | Praveen Kurpati',
     heading: 'Article One',
     date: 'sep 26,2016',
@@ -25,6 +25,27 @@ var articleOne = {
                 I never expected to do all this stuff ,but came real with Imad Moocs they are very interative .
               </p>`
     
+},
+     'article-two' : {
+          title: 'Article Two | Praveen Kurpati',
+    heading: 'Article Two',
+    date: 'sep 26,2016',
+    content:`
+               <p>
+                This is content of article Two .
+                I never expected to do all this stuff ,but came real with Imad Moocs they are very interative.
+              </p>`
+     },
+    'article-three' : {
+        title: 'Article Two | Praveen Kurpati',
+    heading: 'Article Two',
+    date: 'sep 26,2016',
+    content:`
+               <p>
+                This is content of article Two .
+                I never expected to do all this stuff ,but came real with Imad Moocs they are very interative.
+              </p>`
+    }
 };
 
 function createTemplate (data) {
@@ -69,20 +90,14 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/:article-one',function(req,res){
+app.get('/:articleName',function(req,res){
+    //articleName == article-one
+    //articles articleName == {} content object for article-one
     var articleName = req.params.articleName;
     res.send(createTemplate(articleOne));
 });
 
-app.get('/:article-two',function(req,res){
-    var articleName = req.params.articleName;
-    res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-});
 
-app.get('/:article-three',function(req,res){
-    var articleName = req.params.articleName;
-    res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
-});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
