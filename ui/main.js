@@ -4,7 +4,7 @@ var element = document.getElementById('main-text');
 element.innerHTML = 'newValue Praveen';
 //move the image
 
-var img = documment.getElementById('rap')
+var img = document.getElementById('rap')
 var marginLeft = 0;
 function moveRight(){
     marginLeft = marginLeft + 5;
