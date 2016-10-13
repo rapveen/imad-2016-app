@@ -4,7 +4,12 @@ var element = document.getElementById('main-text');
 element.innerHTML = 'newValue Praveen';
 //move the image
 
-/*var img= document.getElementById('rap')
+var img = documment.getElementById('rap')
+var marginLeft = 0;
+function moveRight(){
+    marginLeft = marginLeft + 10;
+    img.style.marginLeft + 'px';
+}
 img.onclick = function(){
-  img.stylr.marginLeft = '100px';  
-};*/
+  var interval = setInterval(moveRight,100);
+};
