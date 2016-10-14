@@ -1,4 +1,4 @@
-console.log('Loaded!');
+console.log('done it!');
 //change text to the main-tex div
 var element = document.getElementById('main-text');
 element.innerHTML = 'newValue Praveen';
