@@ -1,7 +1,7 @@
 console.log('done it!');
 //change text to the main-tex div
-/*var element = document.getElementById('main-text');
-element.innerHTML = 'newValue Praveen';*/
+var element = document.getElementById('main-text');
+element.innerHTML = 'newValue Praveen';
 
 //move the image
 var img = document.getElementById('rap')
