@@ -1,6 +1,6 @@
 //counter code
 var button = document.getElementById("counter");
-button.onclick = function(){
+/*button.onclick = function(){
     //Create the request object
     var request = new XMLHttpRequest();
     
@@ -18,4 +18,10 @@ button.onclick = function(){
    //Make the request
   request.open('GET','http://rapveen.imad.hasura-app.io/counter',true);
   request.send(null);
+};*/
+var counter = 0;
+button.onclick = function(){
+  counter = counter + 1;  
+  var span = document.getElementById('count');
+  span.innerHTML = counter.toStrin();
 };
